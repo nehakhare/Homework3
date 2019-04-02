@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather API</title>
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   <style>
+  body  {
+  background-size:cover;
+  background-repeat:no-repeat;
+  /* background-position: center; */
+  background-color: #cccccc; 
+}
+#ripe {
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+#ripe td, th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+#ripe tbody td {
+  font-size: 13px;
+}
+#ripe tr:nth-child(even) {
+  background: #D0E4F5;
+}
+#ripe thead {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+#ripe thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}
+#ripe thead th:first-child {
+  border-left: none;
+}
+
+#ripe tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #D0E4F5;
+  background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  border-top: 2px solid #444444;
+}
+#ripe tfoot td {
+  font-size: 14px;
+}
+#ripe tfoot .links {
+  text-align: right;
+}
+#ripe tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+
+
+
+#luke {
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+#luke td, th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+#luke tbody td {
+  font-size: 13px;
+}
+#luke tr:nth-child(even) {
+  background: #D0E4F5;
+}
+#luke thead {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+#luke thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}
+#luke thead th:first-child {
+  border-left: none;
+}
+
+#luke tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #D0E4F5;
+  background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  border-top: 2px solid #444444;
+}
+#luke tfoot td {
+  font-size: 14px;
+}
+#luke tfoot .links {
+  text-align: right;
+}
+#luke tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+  </style>
+ 
+</head>
+<body>
+       <div align = "center">
+              <h2>Enter Date</h2>
+
+              <input type="text" name="date" placeholder="Enter date" id="date">
+              <input type="button" value="GetForecast" id="b">
+              
+       <div id="t1">
+       <h2>Forecast from My Api</h2>
+       
+              <table id="ripe" border='1' class="table"  style=" width: 100%;">
+                     <thead>
+                     <tr>
+                           <th>Date</th>
+                           <th>TMin</th>
+                           <th>TMax</th>
+                           </tr>
+                     </thead>
+              </table>
+              </div>
+              
+              <br/>
+              <br/>
+              
+              <div id="t2">
+              <h2>Forecast from Third Party</h2>
+              <table id="luke" border='1' class="table" style=" width: 100%;">
+                     <thead>
+                     <tr>
+                           <th>Date</th>
+                           <th>TMin</th>
+                           <th>TMax</th>
+                            </tr>
+                     </thead>
+              </table>
+              </div>
+              </div>
+             
+
+</body>
+ <script src="js/jslogic.js"> </script>
+</html>
